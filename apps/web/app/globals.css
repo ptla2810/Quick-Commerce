@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Brand tokens. Change these (and NEXT_PUBLIC_BRAND_NAME) to re-brand the platform. */
+@theme {
+  --color-navy-950: #081528;
+  --color-navy-900: #0b1c35;
+  --color-navy-800: #0f2747;
+  --color-navy-700: #1a3a63;
+  --color-navy-100: #dbe3ef;
+  --color-navy-50: #eef2f8;
+  --color-brand-700: #10603a;
+  --color-brand-600: #157a45; /* buttons: 5.3:1 contrast with white */
+  --color-brand-500: #1e9e5a;
+  --color-brand-100: #cdebd9;
+  --color-brand-50: #e8f6ee;
+  --color-accent-700: #9a4f0b;
+  --color-accent-500: #f2994a;
+  --color-accent-100: #fde3c8;
+  --color-accent-50: #fef4ea;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Devanagari", sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: #f6f8fb;
+  color: var(--color-navy-900);
+}
+:focus-visible {
+  outline: 3px solid var(--color-accent-500);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* Grid items default to min-width:auto, which lets truncated text or scrollable tables widen the
+   whole column on phones. Let them shrink so overflow is handled inside the item. */
+.grid > * { min-width: 0; }

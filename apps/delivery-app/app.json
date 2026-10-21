@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Padosi Partner",
+    "slug": "padosi-delivery",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.example.padosi.partner"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#157A45",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.example.padosi.partner"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store"
+    ],
+    "scheme": "padosi-partner"
+  }
+}

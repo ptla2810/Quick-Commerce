@@ -1,0 +1,30 @@
+{
+  "name": "padosi-quick-commerce",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Hyperlocal quick-commerce MVP for Tier-2 and Tier-3 India: grocery, HoReCa and chemist.",
+  "workspaces": [
+    "packages/*",
+    "apps/api",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=20.18"
+  },
+  "scripts": {
+    "db:start": "npm run db:start -w @padosi/api",
+    "db:setup": "npm run db:setup -w @padosi/api",
+    "db:reset": "npm run db:reset -w @padosi/api",
+    "dev:api": "npm run dev -w @padosi/api",
+    "dev:web": "npm run dev -w @padosi/web",
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck:mobile": "npm run typecheck --prefix apps/customer-app && npm run typecheck --prefix apps/delivery-app",
+    "mobile:customer": "npm start --prefix apps/customer-app",
+    "mobile:delivery": "npm start --prefix apps/delivery-app",
+    "setup": "npm install && npm install --prefix apps/customer-app && npm install --prefix apps/delivery-app"
+  }
+}

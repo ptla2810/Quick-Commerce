@@ -1,0 +1,22 @@
+# Optional alternative to the embedded database for machines with Docker.
+# Uses the same credentials and port as apps/api/.env.example.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: padosi
+      POSTGRES_PASSWORD: padosi_dev_password
+      POSTGRES_DB: padosi
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/create-test-db.sql:/docker-entrypoint-initdb.d/create-test-db.sql:ro
+  # Not required by the MVP. Needed later for shared rate limits, queues and multi-instance jobs.
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    profiles: ["redis"]
+volumes:
+  pgdata:
